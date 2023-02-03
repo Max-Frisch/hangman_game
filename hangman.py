@@ -80,15 +80,15 @@ while True:
         wrong_guesses.append(guessed_letter)
         number_wrong_guesses +=1
         print(f"ZONK! You guessed a wrong letter!")
-        
+    # the guessed letter is within the word    
     else:
         index = 0
         for letter in secret_word:
             if letter == guessed_letter:
                 guessed_letters[index] = letter
                 guessed_word = "".join(guessed_letters)
-                # guessed_word = guessed_word.replace("_", letter,1)
             index += 1
+        # checking for the win condition, all letters guessed right
         if guessed_word == secret_word:
             print("")
             print("CONGRATS! You guessed the word!")
@@ -97,16 +97,19 @@ while True:
             break
     print("")
     print("")
+    # print out no. of mistakes and wrong guesses, once 1 mistake was made
     if len(wrong_guesses) > 0:
         print("")
         print(f"You made {number_wrong_guesses} of {len(hangman_status)-1} mistakes.")
         print("wrong guesses: ", wrong_guesses)
         print("")
     print("")
+    # if at least 1 mistake was made, print out the hangman
     if len(wrong_guesses) > 0:
         print(hangman_status[len(wrong_guesses)])
     print("")
     print("")
+    # print "loose message" if no. of wrong guesses == allowed mistakes
     if len(wrong_guesses) == len(hangman_status)-1:
         print("YOU LOOSE! NOW YOU'RE DEAD!")
         break
