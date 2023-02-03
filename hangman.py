@@ -79,7 +79,7 @@ while True:
     if guessed_letter not in secret_word:
         wrong_guesses.append(guessed_letter)
         number_wrong_guesses +=1
-        print(f"ZONK! You guessed a wrong letter!  You made {number_wrong_guesses} of {len(hangman_status)-1} mistakes.")
+        print(f"ZONK! You guessed a wrong letter!")
         
     else:
         index = 0
@@ -99,6 +99,7 @@ while True:
     print("")
     if len(wrong_guesses) > 0:
         print("")
+        print(f"You made {number_wrong_guesses} of {len(hangman_status)-1} mistakes.")
         print("wrong guesses: ", wrong_guesses)
         print("")
     print("")
@@ -107,6 +108,6 @@ while True:
     print("")
     print("")
     if len(wrong_guesses) == len(hangman_status)-1:
-        print("YOU LOOSE, SUCKER! NOW YOU'RE DEAD!")
+        print("YOU LOOSE! NOW YOU'RE DEAD!")
         break
     
