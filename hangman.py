@@ -70,7 +70,7 @@ print("")
 print("")
 while True:
     print(guessed_word)
-    print(f"(the secret word is: {secret_word})")
+    # print(f"(the secret word is: {secret_word})")
     print("")
     print("")
 
